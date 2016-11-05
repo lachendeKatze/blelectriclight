@@ -13,6 +13,13 @@ function lightSwitch()
 {
    blelectriclight._writeCharacteristic(blelectriclight.switchUUID, new Uint8Array([0]))
 }
+
+function brightnessSelect()
+{
+            var x = document.getElementById("brightness").value;
+            blelectriclight._writeCharacteristic(blelectriclight.brightnessUUID, new Uint8Array([x]));
+            console.log( 'brightness: ' + x);
+}
 /**
 function lightIt(circleID)
 {
