@@ -23,22 +23,30 @@
     }
 
     connect(){
-
       return navigator.bluetooth.requestDevice({
-        filters:[{
+        filters: [{
           services:[this.serviceUUID],
         }]
-      }).then(device => device.gatt.connect())
-      .then(server => server.getPrimaryService(this.serviceUUID))
-      .then(service => {
-        return Promise.all([
-          this._cacheCharacteristic(service, this.colorUUID),
-          this._cacheCharacteristic(service, this.brightnessUUID),
-          this._cacheCharacteristic(service, this.switchUUID)
-        ]);
       })
-    }
-
+        .then(device => {
+          this.device = device;
+          return device.gatt.connect();
+      })
+      .then(server => {
+        this.server = server;
+        return Promise.all([
+          server.getPrimaryService(this.serviceUUID))
+          .then(service=>{  
+            return Promise.all([
+              this._cacheCharacteristic(service, this.colorUUID),
+              this._cacheCharacteristic(service, this.brightnessUUID),
+              this._cacheCharacteristic(service, this.switchUUID)
+            ])
+          })
+        ]);
+    })
+  }
+ 
   _cacheCharacteristic(service, characteristicUuid){
     return service.getCharacteristic(characteristicUuid)
     .then(characteristic => {
