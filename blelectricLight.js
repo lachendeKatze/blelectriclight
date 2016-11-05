@@ -58,6 +58,7 @@
  }
  _writeCharacteristic(characteristicUuid, value){
    let characteristic = this._characteristics.get(characteristicUuid);
+   console.log("read this char: " + characteristicUuid);
    console.log("the write char: " + characteristic);
    return characteristic.writeValue(value);
  }
