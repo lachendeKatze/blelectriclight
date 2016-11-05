@@ -11,7 +11,7 @@
  */
 function lightSwitch()
 {
-   blelectriclight._writeCharacteristic(blelectriclight.switchUUID, new Uint8Array([4]))
+   blelectriclight._writeCharacteristic(blelectriclight.switchUUID, new Uint8Array([0]))
 }
 /**
 function lightIt(circleID)
