@@ -38,9 +38,9 @@
           server.getPrimaryService(this.serviceUUID)
           .then(service=>{  
             return Promise.all([
-              this._cacheCharacteristic(service, this.switchUUID),
+              this._cacheCharacteristic(service, this.colorUUID),
               this._cacheCharacteristic(service, this.brightnessUUID),
-              this._cacheCharacteristic(service, this.colorUUID)
+              this._cacheCharacteristic(service, this.switchUUID)
             ])
           })
         ]);
