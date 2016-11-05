@@ -35,7 +35,7 @@
       .then(server => {
         this.server = server;
         return Promise.all([
-          server.getPrimaryService(this.serviceUUID))
+          server.getPrimaryService(this.serviceUUID)
           .then(service=>{  
             return Promise.all([
               this._cacheCharacteristic(service, this.colorUUID),
