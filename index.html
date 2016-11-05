@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<!--
+This is the ui demonstrating Web Bluetooth API control of a NeoPixel ring Lamp
+-->
+<head>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no
+		initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+
+	<title>BLElectric Lamp</title>
+<!--
+	<style>
+	 @import 'ui/css/evothings-app.css';
+	</style>
+-->
+
+<!--
+	<script src="cordova.js"></script>
+	<script src="libs/jquery/jquery.js"></script>
+	<script src="libs/evothings/evothings.js"></script>
+	<script src="libs/evothings/ui/ui.js"></script>
+	<script src="libs/evothings/arduinoble/arduinoble.js"></script>
+-->
+	<script href='/blelectriclight/blelectriclight.js'></script>
+	<script href='/blelectriclight/app.js'></script>
+</head>
+
+<body ontouchstart=""><!-- ontouchstart="" enables low-delay CSS transitions. -->
+
+
+	<h1>BLElectric 101 Light</h1>
+
+	<p id="info">Initializing...</p>
+
+        <button onclick="bleConnect(this.id)">BLE</button>
+        <canvas id="picker" width="500" height="300"></canvas>
+        <button onclick="app.lampSwitch()">On/Off</button>
+        <label for="brightness">Brightness</label>
+        <input type="range" id="brightness" value="127" min="0" max="255" oninput="brightnessSelect()">
+
+    <!-- ColorPicker javascript, see...
+     The Color Wheel png file comes from this URL.
+     The image file will need to be in the same directory as
+     this index.html file and named colorWheel4.png in order
+     to render the graphic in the UI.
+
+
+     https://commons.wikimedia.org/wiki/File:Color_Wheel.PNG
+
+
+    <script>
+        /**
+         * The following JavaScript code allows us to get the color value
+         * as the selected point on rendered image on the UI.
+         */
+        var canvas = document.getElementById('picker').getContext('2d');
+        var img = new Image();
+        img.src = 'colorWheel4.png';
+        // img.src = 'lizard.png';
+        $(img).load(function(){ canvas.drawImage(img,100,5,295,295);});
+        $('#picker').click(function(event)
+        {
+            var x = event.pageX - this.offsetLeft;
+            var y = event.pageY - this.offsetTop;
+            var imgData = canvas.getImageData(x,y,1,1).data;
+            var R = imgData[0];
+            var G = imgData[1];
+            var B = imgData[2];
+            app.changeLampColor( new Uint8Array([G,R,B]));
+        });
+    </script>
+	-->
+    <!-- brightness slider
+    <script>
+        function brightnessSelect() {
+            var x = document.getElementById("brightness").value;
+            app.changeLampBrightness(new Uint8Array([x]));
+            // console.log( 'brightness: ' + x);
+        }
+    </script>
+    BLE connectivity javascript, see... -->
+	<!-- <script>
+	// Application object.
+	var app = {}
+
+	// Connected device.
+	app.device = null;
+
+    /**
+     * The following functions are connected to our UI and serve to pass data to the proper
+     * characteristic uuid. To improve the reability and ease of future modifications of this
+     * code, it would beneficial to create literals for each of these characteristic uuid's.
+     */
+
+	// Turn NeoPixel Lamp On/Off.
+	app.lampSwitch = function()
+	{
+		app.device && app.device.writeLampCharacteristic(new Uint8Array([0]), '917649a1-d98e-11e5-9eec-0002a5d5c51b');
+	}
+
+    app.changeLampColor = function(color)
+    {
+        /*
+         * The variable color is sent to this function as an array of 3 bytes reflecting the RGB values the
+         * user has slected from the image on the UI. See lines 64-79 above.
+         */
+
+        app.device && app.device.writeLampCharacteristic(color, '917649a3-d98e-11e5-9eec-0002a5d5c51b');
+    }
+
+    app.changeLampBrightness = function(brightness)
+    {
+        app.device && app.device.writeLampCharacteristic(brightness, '917649a2-d98e-11e5-9eec-0002a5d5c51b');
+
+    }
+	app.showMessage = function(info)
+	{
+		document.getElementById('info').innerHTML = info
+	};
+
+	// Called when BLE and other native functions are available.
+	app.onDeviceReady = function()
+	{
+		app.showMessage('Touch the connect button to begin.');
+	};
+
+	app.connect = function()
+	{
+		evothings.arduinoble.close();
+		app.showMessage('Connecting...');
+
+		evothings.arduinoble.connect(
+			'voronoi', /* Advertised name of BLE device as specified in out Arduino sketch */
+			function(device)
+			{
+				app.device = device;
+				app.showMessage('Connected! Touch buttons to turn LED on/off.');
+			},
+			function(errorCode)
+			{
+				app.showMessage('Connect error: ' + errorCode + '.');
+			});
+	};
+
+	document.addEventListener(
+		'deviceready',
+		function() { evothings.scriptsLoaded(app.onDeviceReady) },
+		false);
+	</script>
+-->
+</body>
+
+</html>
