@@ -11,10 +11,10 @@
       */
     constructor() {
         this.deviceName = 'lamp'; // BLElectricLight Device Name
-        this.serviceUUID =  '917649A0-D98E-11E5-9EEC-0002A5D5C51B'; // BLElectricLight service uuid
-        this.switchUUID = '917649A1-D98E-11E5-9EEC-0002A5D5C51B'; // On/Off switch uuid
-        this.brightnessUUID = '917649A2-D98E-11E5-9EEC-0002A5D5C51B'; // Brightness uuid
-        this.colorUUID = '917649A3-D98E-11E5-9EEC-0002A5D5C51B'; // color uuid, holds 3 values G(reen)R(ed)B(lue)
+        this.serviceUUID =  '917649a0-d98e-11e5-9eec-0002a5d5c51b'; // BLElectricLight service uuid
+        this.switchUUID = '917649a1-d98e-11e5-9eec-0002a5d5c51b'; // On/Off switch uuid
+        this.brightnessUUID = '917649a2-d98e-11e5-9eec-0002a5d5c51b'; // Brightness uuid
+        this.colorUUID = '917649a3-d98e-11e5-9eec-0002a5d5c51b'; // color uuid, holds 3 values G(reen)R(ed)B(lue)
         // this.patternUUID = '917649A4-D98E-11E5-9EEC-0002A5D5C51B'; // pattern uuid
         this.device = null;
         this.server = null;
