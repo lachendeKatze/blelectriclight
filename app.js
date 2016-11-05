@@ -76,7 +76,7 @@ var toggleLight = function( circleID )
   */
 function bleConnect(buttonID) {
   var thisButton = document.getElementById(buttonID);
-  thisButton.setAttribute("fill-opacity",0.9);
+  // thisButton.setAttribute("fill-opacity",0.9);
   blectriclight.connect()
       .then(() => console.log('connected'))
       .catch(error => { console.log('connect error!'); });
