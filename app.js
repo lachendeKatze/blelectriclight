@@ -17,6 +17,11 @@ function colorWipe()
     blelectriclight._writeCharacteristic(blelectriclight.switchUUID, new Uint8Array([2]));
 }
 
+function rainbow()
+{
+    blelectriclight._writeCharacteristic(blelectriclight.switchUUID, new Uint8Array([3]));
+}
+
 
 function brightnessSelect()
 {
