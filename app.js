@@ -23,8 +23,8 @@ canvas.addEventListener("mousedown", getPosition, false);
 
 function getPosition(evt)
 {
-   var x = evt.pageX;
-   var y = evt.pageY;
+   var x = evt.pageX - this.offsetLeft;
+   var y = evt.pageY - this.offsetTop;
    
    var imgData = ctx.getImageData(x,y,1,1).data;
    var R = imgData[0];
