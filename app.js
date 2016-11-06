@@ -19,15 +19,19 @@ var ctx = canvas.getContext("2d");
 var img = new Image();
 img.src = "./images/color_wheel.png";
 img.onload = function(){ ctx.drawImage(img,0,0);}
-
-// var imgData = ctx.getImageData(0, 0, c.width, c.height);
 canvas.addEventListener("mousedown", getPosition, false);
 
 function getPosition(evt)
 {
    var x = evt.pageX;
    var y = evt.pageY;
-   console.log(x + " , " + y);
+   
+   var imgData = canvas.getImageData(x,y,1,1).data;
+   var R = imgData[0];
+   var G = imgData[1];
+   var B = imgData[2];
+   
+   console.log(x + " , " + y +"(R,G,B): " + R + "," + G + "," + B);
    
 }
 
