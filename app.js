@@ -4,13 +4,19 @@
 */
 function lightSwitch()
 {
-   blelectriclight._writeCharacteristic(blelectriclight.switchUUID, new Uint8Array([0]))
+   blelectriclight._writeCharacteristic(blelectriclight.switchUUID, new Uint8Array([0]));
 }
 
 function blink()
 {
-   blelectriclight._writeCharacteristic(blelectriclight.switchUUID, new Uint8Array([1]))
+   blelectriclight._writeCharacteristic(blelectriclight.switchUUID, new Uint8Array([1]));
 }
+
+function colorWipe()
+{
+    blelectriclight._writeCharacteristic(blelectriclight.switchUUID, new Uint8Array([2]));
+}
+
 
 function brightnessSelect()
 {
