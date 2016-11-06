@@ -21,7 +21,7 @@ function getPosition(event)
       {
         var x = new Number();
         var y = new Number();
-        var canvas = document.getElementById("canvas");
+        var canvas = document.getElementById("picker");
 
         if (event.x != undefined && event.y != undefined)
         {
