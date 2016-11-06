@@ -7,6 +7,11 @@ function lightSwitch()
    blelectriclight._writeCharacteristic(blelectriclight.switchUUID, new Uint8Array([0]))
 }
 
+function blink()
+{
+   blelectriclight._writeCharacteristic(blelectriclight.switchUUID, new Uint8Array([1]))
+}
+
 function brightnessSelect()
 {
             var x = document.getElementById("brightness").value;
