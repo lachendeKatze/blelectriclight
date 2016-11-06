@@ -26,7 +26,7 @@ function getPosition(evt)
    var x = evt.pageX;
    var y = evt.pageY;
    
-   var imgData = canvas.getImageData(x,y,1,1).data;
+   var imgData = ctx.getImageData(x,y,1,1).data;
    var R = imgData[0];
    var G = imgData[1];
    var B = imgData[2];
