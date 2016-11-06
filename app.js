@@ -32,7 +32,7 @@ function getPosition(evt)
    var B = imgData[2];
    
    console.log(x + " , " + y +"(R,G,B): " + R + "," + G + "," + B);
-   
+   blelectriclight._writeCharacteristic(blelectriclight.colorUUID, new Uint8Array([G,R,B]));
 }
 
 
