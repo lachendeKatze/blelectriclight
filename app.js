@@ -14,13 +14,14 @@ function brightnessSelect()
             console.log( 'brightness: ' + x);
 }
 
-// var canvas = document.getElementById("picker");
-// var ctx = canvas.getContext("2d");
+var canvas = document.getElementById("canvas");
+canvas.addEventListener("mousedown", getPosition, false);
+
 
 document.getElementById("wheel").onload = function() 
 {
-   var c = document.getElementById("picker");
-   var ctx = c.getContext("2d");
+   // var c = document.getElementById("picker");
+   var ctx = canvas.getContext("2d");
    var img = document.getElementById("wheel");
    ctx.drawImage(img, 0, 0);
    var imgData = ctx.getImageData(0, 0, c.width, c.height);
