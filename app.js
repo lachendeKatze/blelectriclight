@@ -22,7 +22,9 @@ document.getElementById("wheel").onload = function()
 {
    // var c = document.getElementById("picker");
    var ctx = canvas.getContext("2d");
-   var img = document.getElementById("wheel");
+   var img = new Image();
+   img.src = "blelectriclight/images/color_wheel_730.png";
+   // var img = document.getElementById("wheel");
    ctx.drawImage(img, 0, 0);
    var imgData = ctx.getImageData(0, 0, c.width, c.height);
 };
