@@ -15,19 +15,12 @@ function brightnessSelect()
 }
 
 var canvas = document.getElementById("picker");
-
-
-
-
-   // var c = document.getElementById("picker");
-   var ctx = canvas.getContext("2d");
-   var img = new Image();
-   img.src = "./images/color_wheel_730.png";
+var ctx = canvas.getContext("2d");
+var img = new Image();
+img.src = "./images/color_wheel_730.png";
    // var img = document.getElementById("wheel");
-   ctx.drawImage(img, 0, 0);
-   var imgData = ctx.getImageData(0, 0, c.width, c.height);
-
-
+canvas.drawImage(img, 0, 0);
+// var imgData = ctx.getImageData(0, 0, c.width, c.height);
 canvas.addEventListener("mousedown", getPosition, false);
 
 function getPosition(evt)
