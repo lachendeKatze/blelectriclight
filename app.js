@@ -18,7 +18,7 @@ var canvas = document.getElementById("picker");
 
 
 
-document.getElementById("wheel").onload = function() 
+/** document.getElementById("wheel").onload = function() 
 {
    // var c = document.getElementById("picker");
    var ctx = canvas.getContext("2d");
@@ -26,7 +26,7 @@ document.getElementById("wheel").onload = function()
    ctx.drawImage(img, 0, 0);
    var imgData = ctx.getImageData(0, 0, c.width, c.height);
 };
-
+*/
 
 canvas.addEventListener("mousedown", getPosition, false);
 
