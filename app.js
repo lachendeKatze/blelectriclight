@@ -2,13 +2,6 @@
 * app.js is the file connecting elements and actions
 * 11/5/2016
 */
-
-
-/**
- * Toggles the opacity of the selected circle representing an LED, then
- * passes off to toggleLight() to change the LED state on the actual
- * arduino101
- */
 function lightSwitch()
 {
    blelectriclight._writeCharacteristic(blelectriclight.switchUUID, new Uint8Array([0]))
@@ -20,6 +13,27 @@ function brightnessSelect()
             blelectriclight._writeCharacteristic(blelectriclight.brightnessUUID, new Uint8Array([x]));
             console.log( 'brightness: ' + x);
 }
+
+var canvas = document.getElementById('picker').getContext('2d');
+var img = new Image();
+img.src = '/images/color_wheel_730.png';
+        // img.src = 'lizard.png'
+$(img).load(function(){ canvas.drawImage(img,100,5,295,295);});
+$('#picker').click(function(event)
+{
+            var x = event.pageX - this.offsetLeft;
+            var y = event.pageY - this.offsetTop;
+            var imgData = canvas.getImageData(x,y,1,1).data;
+            var R = imgData[0];
+            var G = imgData[1];
+            var B = imgData[2];
+            blelectriclight._writeCharacteristic(blelectriclight.colorUUID, new Uint8Array([G,R,B]));
+});
+
+
+
+
+
 /**
 function lightIt(circleID)
 {
