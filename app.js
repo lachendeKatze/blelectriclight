@@ -14,7 +14,7 @@ function brightnessSelect()
             console.log( 'brightness: ' + x);
 }
 
-var canvas = document.getElementById('picker').getContext('2d');
+var canvas = document.getElementById("picker").getContext("2d");
 var img = new Image();
 img.src = '/images/color_wheel_730.png';
         // img.src = 'lizard.png'
