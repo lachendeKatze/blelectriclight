@@ -17,7 +17,7 @@ function brightnessSelect()
 var canvas = document.getElementById("picker");
 var ctx = canvas.getContext("2d");
 var img = new Image();
-img.src = "./images/color_wheel_730.png";
+img.src = "./images/color_wheel.png";
    // var img = document.getElementById("wheel");
  img.onload = function(){ ctx.drawImage(img,0,0);}
 
