@@ -14,7 +14,7 @@ function brightnessSelect()
             console.log( 'brightness: ' + x);
 }
 
-var canvas = document.getElementById("canvas");
+var canvas = document.getElementById("picker");
 canvas.addEventListener("mousedown", getPosition, false);
 
 
