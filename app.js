@@ -16,8 +16,8 @@ function brightnessSelect()
 
 var canvas = document.getElementById("picker");
 var ctx = canvas.getContext("2d");
-var img = new Image();
-img.src = 'blelectriclight/images/color_wheel_730.png';
+// var img = new Image();
+// img.src = 'blelectriclight/images/color_wheel_730.png';
         // img.src = 'lizard.png'
 $(img).load(function(){ canvas.drawImage(img,100,5,295,295);});
 $('#picker').click(function(event)
