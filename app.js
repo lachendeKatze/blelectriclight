@@ -15,7 +15,7 @@ function brightnessSelect()
 }
 
 var canvas = document.getElementById("picker");
-canvas.addEventListener("mousedown", getPosition, false);
+canvas.addEventListener("onclick", getPosition, false);
 
 function getPosition(event)
       {
