@@ -36,10 +36,10 @@ function getPosition(event)
               document.documentElement.scrollTop;
         }
 
-        x -= canvas.offsetLeft;
-        y -= canvas.offsetTop;
-
-        alert("x: " + x + "  y: " + y);
+        //x -= canvas.offsetLeft;
+        // y -= canvas.offsetTop;
+        console.log("x: " + x + "  y: " + y);
+        // alert("x: " + x + "  y: " + y);
 }
 
 document.getElementById("wheel").onload = function() 
