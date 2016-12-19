@@ -1,0 +1,75 @@
+/**
+  * The following style sheet is was copied an modified from:
+  *   https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+  *   11/20/2016
+  *
+  */
+
+
+html {
+  background: darkblue no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-flex-flow: row wrap;
+  flex-flow: row-wrap;
+
+  font-weight: bold;
+  text-align: center;
+}
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+.header {
+  background: darkblue;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Comic Sans MS";
+  font-size: 80px;
+}
+.footer {
+  background: darkblue;
+  display: flex;
+  flex-direction: row;
+  flex-flow: row;
+  justify-content: center;
+}
+.main {
+  background: darkblue;
+  display: flex;
+  flex-direction: row;
+  flex-flow: nowrap;
+  justify-content: center;
+}
+
+.aside-1 {
+  background: darkblue;
+}
+
+.aside-2 {
+  background: darkblue;
+
+}
+@media all and (min-width: 600px) {
+  .aside { flex: 1 auto; }
+}
+
+@media all and (min-width: 800px) {
+  .main    { flex: 3 0px; }
+  .aside-1 { order: 1; }
+  .main    { order: 2; }
+  .aside-2 { order: 3; }
+  .footer  { order: 4; }
+}
