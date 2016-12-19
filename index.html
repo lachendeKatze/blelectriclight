@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>VoiceBot101</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">VoiceBot101</header>
+      <article class="main">
+        <img width="400" height="400" src="./images/robot.png">
+      </article>
+      <aside class="aside aside-1"></aside>
+      <aside class="aside aside-2"></aside>
+      <footer class="footer">
+        <img onclick="bleConnect()" width="100" height="100" src="./images/WebBluetoothAPIImage.png">
+        <img onclick="sendCommand(0)" width="100" height="100" src="./images/stopsign.png">
+        <img onclick="sendCommand(1)" width="100" height="100" src="./images/forward.png">
+        <img onclick="sendCommand(2)" width="100" height="100" src="./images/reverse.png">
+        <img onclick="sendCommand(3)" width="100" height="100" src="./images/right.png">
+        <img onclick="sendCommand(4)" width="100" height="100" src="./images/left.png">
+      </footer>
+    </div>
+    <script src="voicebot.js"></script>
+	  <script src="app.js"></script>
+  </body>
+</html>
