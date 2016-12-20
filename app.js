@@ -38,7 +38,7 @@ var img = new Image();
 img.src = "./images/colorwheel.png";
 img.width = 400;
 img.height = 400;
-img.onload = function(){ ctx.drawImage(img,0,0);}
+img.onload = function(){ ctx.drawImage(img,0,0,400,400);}
 canvas.addEventListener("mousedown", getPosition, false);
 
 function getPosition(evt)
