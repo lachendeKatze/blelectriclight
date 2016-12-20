@@ -4,7 +4,6 @@
 */
 
 
-
 function sendCommand(value)
 {
    switch(value)
@@ -13,32 +12,16 @@ function sendCommand(value)
          blelectriclight._writeCharacteristic(blelectriclight.switchUUID, new Uint8Array([0]));
          break;
       case(1):
+         blelectriclight._writeCharacteristic(blelectriclight.switchUUID, new Uint8Array([1]));
          break;
       case(2):
+         blelectriclight._writeCharacteristic(blelectriclight.switchUUID, new Uint8Array([2]));
          break;
       case(3):  
+         blelectriclight._writeCharacteristic(blelectriclight.switchUUID, new Uint8Array([3]));
          break;   
    }
 };
-function lightSwitch()
-{
-   blelectriclight._writeCharacteristic(blelectriclight.switchUUID, new Uint8Array([0]));
-}
-
-function blink()
-{
-   blelectriclight._writeCharacteristic(blelectriclight.switchUUID, new Uint8Array([1]));
-}
-
-function colorWipe()
-{
-    blelectriclight._writeCharacteristic(blelectriclight.switchUUID, new Uint8Array([2]));
-}
-
-function rainbow()
-{
-    blelectriclight._writeCharacteristic(blelectriclight.switchUUID, new Uint8Array([3]));
-}
 
 /**
 hold off here unitl I can figure out how to put this on the UI nicely
