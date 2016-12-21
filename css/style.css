@@ -62,6 +62,13 @@ html {
   background: darkblue;
 
 }
+.flex-item {
+    background-color: red;
+    width: 100px;
+    margin: 10px;
+}
+
+
 @media all and (min-width: 600px) {
   .aside { flex: 1 auto; }
 }
@@ -71,5 +78,6 @@ html {
   .aside-1 { order: 1; }
   .main    { order: 2; }
   .aside-2 { order: 3; }
-  .footer  { order: 4; }
+  .flex-item {order: 4; }
+  .footer  { order: 5; }
 }
