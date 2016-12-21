@@ -23,15 +23,14 @@ function sendCommand(value)
    }
 };
 
-/**
-hold off here unitl I can figure out how to put this on the UI nicely
 function brightnessSelect()
 {
             var x = document.getElementById("brightness").value;
             blelectriclight._writeCharacteristic(blelectriclight.brightnessUUID, new Uint8Array([x]));
             console.log( 'brightness: ' + x);
 }
-**/
+
+
 var canvas = document.getElementById("picker");
 var ctx = canvas.getContext("2d");
 var img = new Image();
