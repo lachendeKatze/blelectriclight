@@ -22,6 +22,7 @@
         this._characteristics = new Map();
     }
 
+    // make a connection to our defined service and cache advertised characteristis
     connect(){
       return navigator.bluetooth.requestDevice({
         filters: [{
@@ -66,6 +67,7 @@
    });
 
  }
+ // write the value tothe characteristic here
  _writeCharacteristic(characteristicUuid, value){
    let characteristic = this._characteristics.get(characteristicUuid);
    console.log("read this char: " + characteristicUuid);
