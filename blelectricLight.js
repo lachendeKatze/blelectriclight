@@ -47,6 +47,7 @@
     })
   }
  
+  // cache the characteristics for asynchronous calls   
   _cacheCharacteristic(service, characteristicUuid){
     return service.getCharacteristic(characteristicUuid)
     .then(characteristic => {
@@ -54,6 +55,7 @@
     });
   }
 
+ // characteristics are not read from, but keep this "boilerplate code here just in case.   
  _readCharacteristic(characteristicUuid) {
    let characteristic = this._characteristics.get(characteristicUuid);
    console.log("read this char: " + characteristicUuid);
