@@ -1,4 +1,10 @@
-                   .:                     :,                                          
+/********************************************************************************/
+/*** This is the original README file as I downloaded from thingverse         ***/
+/*** in order to print for the BLElectric Light 101 project from Hackster.io  ***/
+/*** the lampbulb.stl file should be print at 1.24% in all 3 dimensions       ***/
+/*** the rest of the readme text below is the original from Chuck Hellebuyck  ***/
+/********************************************************************************/
+.:                     :,                                          
 ,:::::::: ::`      :::                   :::                                          
 ,:::::::: ::`      :::                   :::                                          
 .,,:::,,, ::`.:,   ... .. .:,     .:. ..`... ..`   ..   .:,    .. ::  .::,     .:,`   
