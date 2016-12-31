@@ -4,8 +4,9 @@
 
 /**
 * This project demonstrates how to control an adafruit industries NeoPixel Ring over BLE using an arduino/genuino101.
-* This projct is derived from the Cproject in Chapter 7 of Make: Bluetooth: Bluetooth LE Projects with Arduino, Raspberry Pi,
+* This projct is derived from the project in Chapter 7 of Make: Bluetooth: Bluetooth LE Projects with Arduino, Raspberry Pi,
 * and Smartphones and the project by the Ruiz brothers from Adafruit entitled,(http://www.thingiverse.com/thing:1343925)
+* and is now modified yo include special effects.
 */
 
 /**
@@ -16,9 +17,7 @@ BLEService lampService("917649A0-D98E-11E5-9EEC-0002A5D5C51B"); // Custom UUID
 BLEUnsignedCharCharacteristic switchCharacteristic("917649A1-D98E-11E5-9EEC-0002A5D5C51B", BLEWrite);
 BLEUnsignedCharCharacteristic brightnessCharacteristic("917649A2-D98E-11E5-9EEC-0002A5D5C51B", BLEWrite);
 BLECharacteristic colorCharacteristic("917649A3-D98E-11E5-9EEC-0002A5D5C51B", BLEWrite,3);
-BLEUnsignedCharCharacteristic patternCharacteristic("917649A4-D98E-11E5-9EEC-0002A5D5C51B", BLEWrite);
 BLEDescriptor lampDescriptor("2902", "ble");
-
 /**
  * establish which pin the NeoPixel ring is attachd to on the Arduino/Genuino101, and the
  * number of NeoPixels on the ring.
@@ -32,6 +31,7 @@ BLEDescriptor lampDescriptor("2902", "ble");
  *  example for more information on possible values.
 */
 
+// light will represent the 12 neopixel ring
 Adafruit_NeoPixel light = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_RGBW + NEO_KHZ800);
 // Adafruit_NeoPixel pixels;
 int delayTime = 150; // delay used for NeoPixel light effects.
@@ -59,11 +59,11 @@ void setup() {
   * is very useful for debugging. All serial references could be
   * commented out if desried.
   */
-  Serial.begin(9600); // initialize Serial communication
-  while (!Serial);    // wait for the serial port to open
+  // Serial.begin(9600); // initialize Serial communication
+  // while (!Serial);    // wait for the serial port to open
 
-  Serial.println("Arduino101/IntelCurie/NeoPixel-Voroni-Lamp/Evothings Example Started");
-  Serial.println("Serial rate set to 9600");
+  // Serial.println("Arduino101/IntelCurie/NeoPixel-Voroni-Lamp/Evothings Example Started");
+  // Serial.println("Serial rate set to 9600");
 
   // initilize the ble service, characterisitcs and advertising
   blePeripheral.setLocalName("lamp");
@@ -96,7 +96,7 @@ void setup() {
 
   // advertise the service
   blePeripheral.begin();
-  Serial.println(("Bluetooth device active, waiting for connections..."));
+  // Serial.println(("Bluetooth device active, waiting for connections..."));
 
   // setup the lamp state variable strucutre and set to intial values
 
@@ -129,15 +129,15 @@ void loop() {
 void blePeripheralConnectHandler(BLECentral& central)
 {
   // central connected event handler
-  Serial.print("Connected event, central: ");
-  Serial.println(central.address());
+  // Serial.print("Connected event, central: ");
+  // Serial.println(central.address());
 }
 
 void blePeripheralDisconnectHandler(BLECentral& central)
 {
   // central disconnected event handler
-  Serial.print("Disconnected event, central: ");
-  Serial.println(central.address());
+  // Serial.print("Disconnected event, central: ");
+  // Serial.println(central.address());
 }
 
 void switchCharacteristicWritten(BLECentral& central, BLECharacteristic& characteristic)
