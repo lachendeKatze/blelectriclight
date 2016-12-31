@@ -4,6 +4,7 @@
 */
 
 
+// This function is used to turn light on/off and select special effects
 function sendCommand(value)
 {
    switch(value)
@@ -30,7 +31,7 @@ function brightnessSelect()
             console.log( 'brightness: ' + x);
 }
 
-
+// This code gets the color values from the point cliked on the color wheel. See voronoi project code for credits
 var canvas = document.getElementById("picker");
 var ctx = canvas.getContext("2d");
 var img = new Image();
@@ -54,7 +55,7 @@ function getPosition(evt)
    blelectriclight._writeCharacteristic(blelectriclight.colorUUID, new Uint8Array([G,R,B]));
 }
 
-
+// a user action is required for security reasons, here it is. . .
 function bleConnect(buttonID) {
   var thisButton = document.getElementById(buttonID);
   // thisButton.setAttribute("fill-opacity",0.9);
