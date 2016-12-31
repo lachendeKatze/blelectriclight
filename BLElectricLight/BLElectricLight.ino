@@ -248,6 +248,12 @@ uint32_t Wheel(byte WheelPos) {
   return light.Color(WheelPos * 3, 255 - WheelPos * 3, 0);
 }
 
+/*
+* Each of these ISR changes the state of the each of neopxiels every time it is called by "one" by CurieTimerOne
+* and then displays the entire ring. No delay() used, the unit as a whole remains reponsive to BLE characterisitic
+* changes. The for loops only set the state of each neopixel.
+*/
+
 void rainbowISR()
 {
  if ( lampState.colorIncrement == 256 ) { lampState.colorIncrement = 0; }
